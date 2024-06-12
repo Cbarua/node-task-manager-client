@@ -1,0 +1,30 @@
+extends includes/layout
+block content
+  form#addTaskForm(
+    action="/tasks",
+    method="post",
+    hx-target="#tasks",
+    hx-swap="afterbegin"
+  )
+    .add-task-fields
+      label(for="description") New Task
+      input#description(
+        type="text",
+        name="description",
+        placeholder="What needs to be done?",
+        required
+      )
+    .add-task-fields
+      label(for="completed") Completed
+      input#completed(type="checkbox", name="completed")
+    button(type="submit") Add Task
+
+  ul#tasks.scrollbar-container
+    if tasks
+      each task in tasks
+        include includes/task.pug
+
+  .tasks-filters
+    a(href="/tasks", hx-target="#tasks", hx-select="#tasks" hx-swap="outerHTML") All
+    a(href="/tasks?completed=true", hx-target="#tasks", hx-select="#tasks" hx-swap="outerHTML") Completed
+    a(href="/tasks?completed=false", hx-target="#tasks", hx-select="#tasks" hx-swap="outerHTML") Not Completed

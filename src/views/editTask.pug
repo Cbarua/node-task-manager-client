@@ -1,0 +1,21 @@
+extends includes/layout
+block content
+  - const htmlId = "task_" + task._id;
+  form#editTaskForm(action="/updateTask/" + task._id, method="post")
+    .form-inputs
+      input(
+        type="text",
+        name="description",
+        value=task.description,
+        placeholder="What needs to be done?",
+        required
+      )
+      input(type="checkbox", name="completed", checked=task.completed)
+    .form-actions
+      button(type="submit") Save
+      a.btn(
+        href="/tasks",
+        hx-select="#content",
+        hx-target="#content",
+        hx-swap="outerHTML"
+      ) Cancel

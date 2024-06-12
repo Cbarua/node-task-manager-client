@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/app.css")
+    title Task Manager
+  body
+    #statusMessage(hx-swap-oob="true")
+      if error
+        .warning #{ error }
+      if message
+        .success #{ message }
+
+    main(hx-boost="true")
+      header
+        a(href="/")
+          h1 Task Manager
+        block profileImage
+          a.profile(
+            href="/me",
+            hx-select="#content",
+            hx-target="#content",
+            hx-swap="outerHTML"
+          )
+            figure.profile-img
+              //- Without the forward slash before the url fragment translates to /tasks/:id/edit/img/...
+              img(src="/img/user.png", alt="user profile image")
+      section#content
+        block content
+    script(
+      src="https://unpkg.com/htmx.org@1.9.12",
+      integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2",
+      crossorigin="anonymous"
+    )

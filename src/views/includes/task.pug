@@ -1,0 +1,27 @@
+- const htmlId = "task_" + task._id;
+li.task(id=htmlId)
+  span.task-description #{ task.description }
+  span.task-actions
+    input(
+      type="checkbox",
+      name="completed",
+      checked=task.completed,
+      hx-post="/updateTask/" + task._id,
+      hx-trigger="change",
+      hx-target="#" + htmlId,
+      hx-swap="outerHTML",
+      hx-select="#" + htmlId
+    )
+    a(
+      href="/editTask/" + task._id,
+      hx-select="#editTaskForm",
+      hx-target="#content"
+    )
+      img.icon(src="/img/pen.png", alt="edit") 
+    a(
+      href="/deleteTask/" + task._id,
+      hx-target="#" + htmlId,
+      hx-swap="outerHTML",
+      hx-confirm="Are you sure you want to delete this task?"
+    )
+      img.icon(src="/img/delete.png", alt="delete")

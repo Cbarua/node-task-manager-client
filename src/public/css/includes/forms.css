@@ -1,0 +1,49 @@
+#addTaskForm,
+#loginForm {
+  margin-bottom: 3rem;
+}
+
+#loginForm > :not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.add-task-fields {
+  margin-bottom: 1rem;
+}
+
+#addTaskForm label {
+  margin-right: 2rem;
+}
+
+#loginForm + a {
+  color: #0061ff;
+}
+
+form#userForm {
+  display: flex;
+  flex-direction: column;
+}
+
+form#userForm > :not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+form#userForm fieldset[name="radio"] {
+  padding: 1rem 0;
+  border: none;
+}
+
+form#userForm fieldset[name="radio"] > :not(legend) {
+  margin-right: 1rem;
+}
+
+#editTaskForm .form-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#editTaskForm .form-actions>:first-child {
+    margin-right: 2rem;
+}

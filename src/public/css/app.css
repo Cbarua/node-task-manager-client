@@ -1,0 +1,87 @@
+@import url("includes/base.css");
+@import url("includes/message.css");
+@import url("includes/scrollbar.css");
+@import url("includes/tasks.css");
+@import url("includes/forms.css");
+
+main {
+  padding: 5rem;
+  background: #fbfbfb;
+  border-radius: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+  color: #0061ff;
+}
+
+a.profile {
+  align-self: center;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  margin-left: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.5rem 1rem;
+}
+
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+button,
+.btn {
+  background: #0061ff;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+}
+
+.btn-logout {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  background: red;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn-submit {
+  all: unset;
+}
+
+a[href] {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}

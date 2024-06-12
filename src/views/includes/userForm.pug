@@ -1,0 +1,33 @@
+form#userForm(action=url, method="post")
+  label(for="name") Name
+  input#name(type="text", name="name", value=name)
+  label(for="email") Email
+  input#email(type="email", name="email", value=email)
+  label(for="password") #{ passwordText }
+  input#password(type="password", name="password", minlength="8")
+  label(for="dob") Date of birth
+  input#dob(type="date", name="dob", value=dob)
+  fieldset(name="radio") 
+    legend Gender
+    label(for="male") Male
+    input#male(
+      type="radio",
+      name="gender",
+      value="male",
+      checked=gender === "male"
+    )
+    label(for="female") Female
+    input#female(
+      type="radio",
+      name="gender",
+      value="female",
+      checked=gender === "female"
+    )
+    label(for="other") Other
+    input#other(
+      type="radio",
+      name="gender",
+      value="other",
+      checked=gender === "other"
+    )
+  button(type="submit") #{ btnText }

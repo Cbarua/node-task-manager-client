@@ -1,0 +1,36 @@
+/* Custom Scrollbar Styles */
+
+/* General scrollbar-container Styling */
+.scrollbar-container {
+  padding-right: 1rem;
+  overflow-y: scroll;
+  position: relative;
+}
+
+/* Webkit Browsers */
+.scrollbar-container::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+.scrollbar-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the tracking area */
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb {
+  background: #0061ff; /* Color of the scroll thumb */
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb:hover {
+  background: #1c73ff; /* Darker shade on hover */
+}
+
+/* Firefox */
+.scrollbar-container {
+  scrollbar-width: thin; /* "auto", "thin", or "none" */
+  scrollbar-color: #0061ff #f1f1f1; /* Thumb and track color */
+}
+
+/* Additional Styling for Hover State in Firefox */
+.scrollbar-container:hover {
+  scrollbar-color: #1c73ff #f1f1f1; /* Darker thumb color on hover */
+}

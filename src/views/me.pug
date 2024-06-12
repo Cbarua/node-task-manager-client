@@ -1,0 +1,7 @@
+extends includes/layout
+block content
+  - const url = "/me";
+  - const btnText = "Save";
+  - const passwordText = "Change Password";
+  include includes/userForm
+  a.btn.btn-logout(href="/logout", hx-boost="false") Log Out

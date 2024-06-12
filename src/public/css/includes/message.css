@@ -1,0 +1,39 @@
+@keyframes show {
+  0% {
+    top: -100%;
+  }
+  25% {
+    top: 0;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+#statusMessage {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  text-align: center;
+  animation: show 4s;
+  animation-iteration-count: 1;
+}
+
+.warning,
+.success {
+  padding: 2rem;
+  letter-spacing: 2px;
+}
+
+.warning {
+  color: white;
+  background: #ff0000b2;
+}
+
+.success {
+  color: #000;
+  background: #00ff00;
+}

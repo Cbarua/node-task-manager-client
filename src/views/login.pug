@@ -1,0 +1,28 @@
+extends includes/layout
+block profileImage
+
+block content
+  form#loginForm(
+    action="/login",
+    method="POST",
+    hx-select="main",
+    hx-target="main",
+    hx-swap="outerHTML",
+    hx-push-url="/?loggedIn"
+  )
+    label(for="email") Enter your email
+    input#email(type="email", name="email", value="kz8@gmail.com")
+    label(for="password") Enter your password
+    input#password(
+      type="password",
+      name="password",
+      minlength="8",
+      value="postmano1E@"
+    )
+    button(type="submit") Login
+  a(
+    href="/signup",
+    hx-select="#content",
+    hx-target="#content",
+    hx-swap="outerHTML"
+  ) Not a user? Sign up here
